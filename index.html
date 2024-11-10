@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            color: blue;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Job Portal</h2>
+
+        <!-- Register Form -->
+        <div id="register-form">
+            <h3>Sign up</h3>
+            <input type="text" id="register-username" placeholder="Enter username" required>
+            <input type="password" id="register-password" placeholder="Enter password" required>
+            <button onclick="register()">Register</button>
+            <div class="message hidden" id="register-message"></div>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login-form" class="hidden">
+            <h3>Login</h3>
+            <input type="text" id="login-username" placeholder="Enter username" required>
+            <input type="password" id="login-password" placeholder="Enter password" required>
+            <button onclick="login()">Login</button>
+            <div class="message hidden" id="login-message"></div>
+        </div>
+
+        <!-- Logged-in message -->
+        <div id="logged-in-message" class="hidden">
+            <h3>Welcome, <span id="user-name"></span></h3>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script>
+        // Функция для регистрации
+        function register() {
+            const username = document.getElementById("register-username").value;
+            const password = document.getElementById("register-password").value;
+            const message = document.getElementById("register-message");
+
+            if (!username || !password) {
+                message.textContent = "Both fields are required!";
+                message.classList.remove("hidden");
+                return;
+            }
+
+            // Получаем пользователей из localStorage или создаем новый массив, если данных нет
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+
+            // Проверка, существует ли уже такой пользователь
+            if (users.some(user => user.username === username)) {
+                message.textContent = "Username already exists! Redirecting to login...";
+                message.classList.remove("hidden");
+
+                // После короткой задержки, скрываем форму регистрации и показываем форму логина
+                setTimeout(() => {
+                    document.getElementById("register-form").classList.add("hidden");
+                    document.getElementById("login-form").classList.remove("hidden");
+                }, 2000); // Задержка 2 секунды
+
+                return;
+            }
+
+            // Добавляем нового пользователя в localStorage
+            users.push({ username, password });
+            localStorage.setItem("users", JSON.stringify(users));
+
+            message.textContent = "Registration successful! Please login.";
+            message.style.color = "green";
+            message.classList.remove("hidden");
+
+            // Скрываем форму регистрации и показываем форму логина
+            setTimeout(() => {
+                document.getElementById("register-form").classList.add("hidden");
+                document.getElementById("login-form").classList.remove("hidden");
+            }, 2000); // Задержка 2 секунды
+        }
+
+        // Функция для входа
+        function login() {
+            const username = document.getElementById("login-username").value;
+            const password = document.getElementById("login-password").value;
+            const message = document.getElementById("login-message");
+
+            if (!username || !password) {
+                message.textContent = "Both fields are required!";
+                message.classList.remove("hidden");
+                return;
+            }
+
+            // Получаем пользователей из localStorage
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+
+            // Ищем пользователя в массиве
+            const user = users.find(user => user.username === username && user.password === password);
+
+            if (user) {
+                // Если пользователь найден, показываем приветствие и перенаправляем на другую страницу
+                document.getElementById("login-form").classList.add("hidden");
+                document.getElementById("logged-in-message").classList.remove("hidden");
+                document.getElementById("user-name").textContent = username;
+
+                // Переход на другую страницу (например, на страницу с доступом после авторизации)
+                window.location.href = "base2.html"; // Здесь замените на свою ссылку
+            } else {
+                message.textContent = "Invalid username or password!";
+                message.classList.remove("hidden");
+            }
+        }
+
+        // Функция для выхода
+        function logout() {
+            // Показываем форму логина и скрываем сообщение о приветствии
+            document.getElementById("logged-in-message").classList.add("hidden");
+            document.getElementById("login-form").classList.remove("hidden");
+            document.getElementById("login-username").value = "";
+            document.getElementById("login-password").value = "";
+        }
+    </script>
+
+</body>
+</html>

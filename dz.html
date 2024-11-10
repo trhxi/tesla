@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Красивый текст с Bootstrap</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f0f2f5; /* Нежный серо-голубой фон */
+      font-family: 'Arial', sans-serif; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      max-width: 700px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #4a4a4a; /* Глубокий серый цвет заголовка */
+      font-size: 2.2em;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    hr {
+      border: 1px solid #e1e1e1;
+      margin: 20px 0;
+    }
+
+    p {
+      line-height: 1.7;
+      color: #555;
+      font-size: 1.1em;
+      text-align: justify;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #007bff;
+      background-color: #e9f4ff;
+      padding: 3px 5px;
+      border-radius: 4px;
+    }
+
+    .task-list {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      color: #444;
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-left: 4px solid #007bff;
+    }
+
+    .task-title {
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Д/з по информатике</h1>
+   
+    <hr>
+
+    <div class="task-list">
+      <div class="task-title">Темы 30-36: Линейные алгоритмы, логические выражения, условные конструкции if/elif/else</div>
+      <ul>
+        <li>17. Напишите линейный алгоритм, который выполняет простые математические операции с введёнными числами.</li>
+        <li>18. Решите задачи на составление логических выражений (например, определить четность или положительность числа).</li>
+        <li>19. Составьте и напишите программу с использованием условного оператора if/elif/else для определения возраста человека и его категории.</li>
+        <li>20. Напишите программу, которая определяет, является ли число простым, используя условные конструкции.</li>
+      </ul>
+    </div>
+
+    <div class="task-list">
+      <div class="task-title">Темы 37-39: Циклы for и while</div>
+      <ul>
+        <li>21. Используйте цикл for для вывода чисел от 1 до 10 и подсчёта их суммы.</li>
+        <li>22. Решите задачу с использованием цикла while: найдите сумму чисел, вводимых пользователем, пока не будет введено число 0.</li>
+        <li>23. Напишите программу на for и while для вычисления факториала заданного числа.</li>
+      </ul>
+    </div>
+
+    <div class="task-list">
+      <div class="task-title">Темы 40-42: Функции, работа с датой и временем</div>
+      <ul>
+        <li>24. Создайте функцию, которая принимает два числа и возвращает их сумму.</li>
+        <li>25. Напишите функцию, которая принимает строку и возвращает количество символов в ней.</li>
+        <li>26. Изучите библиотеку datetime в Python: напишите программу, которая выводит текущую дату и время.</li>
+        <li>27. Напишите функцию, которая принимает дату рождения и считает возраст.</li>
+      </ul>
+    </div>
+
+    <div class="task-list">
+      <div class="task-title">Темы 43-45: Дополнительные задачи, методы сортировки, графы</div>
+      <ul>
+        <li>28. Решите задачи по программированию (можно использовать задачи на Codeforces или LeetCode, уровень "easy").</li>
+        <li>29. Примените метод сортировки пузырьком для сортировки списка чисел.</li>
+        <li>30. Напишите программу для сортировки строк по алфавиту.</li>
+        <li>31. Изучите основные понятия графов: узлы и рёбра. Нарисуйте граф из 5 узлов.</li>
+        <li>32. Опишите, как можно использовать графы для моделирования социальных сетей.</li>
+      </ul>
+    </div>
+
+    <div class="task-list">
+      <div class="task-title">Темы 46-49: Алгоритмы на графах, основы HTML и CSS</div>
+      <ul>
+        <li>33. Изучите алгоритм поиска в ширину (BFS) и попробуйте реализовать его для небольшого графа.</li>
+        <li>34. Создайте простой HTML-документ: структуру сайта с заголовком и абзацем.</li>
+        <li>35. Добавьте к HTML-документу стили CSS для фона и текста.</li>
+        <li>36. Создайте базовый HTML-документ с заголовками, абзацами и списками.</li>
+      </ul>
+    </div>
+
+    <div class="task-list">
+      <div class="task-title">Темы 50-53: HTML и CSS на практике, базы данных</div>
+      <ul>
+        <li>37. Напишите HTML-документ для личного профиля с использованием списков и изображений.</li>
+        <li>38. Примените CSS-стили к вашему HTML-документу: настройте цвета, шрифты и выравнивание текста.</li>
+        <li>39. Изучите основы баз данных: напишите, что такое таблицы и как они хранят данные.</li>
+        <li>40. Создайте простой SQL-запрос для добавления, обновления и удаления записей в таблице.</li>
+      </ul>
+    </div>
+
+    <div class="task-list">
+      <div class="task-title">Тема 54: Повторение</div>
+      <ul>
+        <li>41. Повторите основные темы и решите задачи из тем, в которых остались вопросы.</li>
+        <li>42. Пройдите тест по информатике, включающий задачи по переводу систем счисления, логическим операциям и основам HTML и CSS.</li>
+      </ul>
+    </div>
+
+    <p>
+      <span class="highlight">,,,</span> 
+    </p>
+  </div>
+</body>
+</html>
