@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Таблица </title>
+  <title>Таблица 8x16 с линиями</title>
   <!-- Подключаем Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
@@ -22,7 +21,7 @@
       padding: 20px;
       background-color: #ffffff;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-      overflow-x: auto;
+      overflow-x: auto; /* Добавляем горизонтальную прокрутку */
     }
     table {
       width: 100%;
@@ -43,34 +42,14 @@
     tbody tr:hover {
       background-color: #e9ecef;
     }
-
-    /* Стили для мобильной версии */
+    /* Стили для горизонтальной прокрутки на маленьких экранах */
     @media (max-width: 768px) {
-      table, thead, tbody, th, td, tr {
-        display: block;
+      .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Плавная прокрутка на мобильных устройствах */
       }
-      thead tr {
-        display: none;
-      }
-      tbody tr {
-        margin-bottom: 15px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 10px;
-      }
-      td {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
-      }
-      td:last-child {
-        border-bottom: none;
-      }
-      td::before {
-        content: attr(data-label);
-        font-weight: bold;
-        color: #007bff;
+      table {
+        min-width: 600px; /* Устанавливаем минимальную ширину таблицы */
       }
     }
   </style>
@@ -92,36 +71,165 @@
       </thead>
       <tbody>
         <tr>
-          <td data-label="Работы">Пробник 1</td>
-          <td data-label="Абитов Р">68</td>
-          <td data-label="Габдулхак Н">55</td>
-          <td data-label="Джагадулла Н">???</td>
-          <td data-label="Каримов Е">???</td>
-          <td data-label="Керимкулова А">-</td>
-          <td data-label="Машанало И">71</td>
-          <td data-label="Мустафин Н">86</td>
+          <td>Пробник 1</td>
+          <td>68</td>
+          <td>55</td>
+          <td>???</td>
+          <td>???</td>
+          <td>-</td>
+          <td>71</td>
+          <td>86</td>
         </tr>
         <tr>
-          <td data-label="Работы">Срез 1</td>
-          <td data-label="Абитов Р">8 мат 11/12 инф</td>
-          <td data-label="Габдулхак Н">-</td>
-          <td data-label="Джагадулла Н">10 мат 12 инф</td>
-          <td data-label="Каримов Е">-</td>
-          <td data-label="Керимкулова А">-</td>
-          <td data-label="Машанало И">-</td>
-          <td data-label="Мустафин Н">-</td>
+          <td>Срез 1</td>
+          <td>8 мат 11/12 инф</td>
+          <td>-</td>
+          <td>10 мат 12 инф</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
         </tr>
         <tr>
-          <td data-label="Работы">Пробник 2</td>
-          <td data-label="Абитов Р"></td>
-          <td data-label="Габдулхак Н"></td>
-          <td data-label="Джагадулла Н"></td>
-          <td data-label="Каримов Е"></td>
-          <td data-label="Керимкулова А"></td>
-          <td data-label="Машанало И"></td>
-          <td data-label="Мустафин Н"></td>
+          <td>Пробник 2</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
-        <!-- Остальные строки таблицы... -->
+        <tr>
+          <td>Срез 2</td>
+          <td>7 мат 8/15 инф</td>
+          <td>6 мат 8/15 инф</td>
+          <td>10 мат 14/15 инф</td>
+          <td>?</td>
+          <td>-</td>
+          <td>5 мат 9/15 инф</td>
+          <td>7.5 матан 10/15 инф</td>
+        </tr>
+        <tr>
+          <td>Пробник 3</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Срез 3</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Пробник 4</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Срез 4</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Пробник 5</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Срез 5</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Пробник 6</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Срез 6</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Пробник 7</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Срез 7</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Пробник 8</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Срез 8</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
       </tbody>
     </table>
   </div>
